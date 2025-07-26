@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%- title %></title>
+  <link href="/css/styles.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <% if (typeof extraCSS !=='undefined' && extraCSS) { %>
+    <link rel="stylesheet" href="<%= extraCSS %>">
+    <% } %>
+</head>
+
+<body class="bg-gray-100 font-sans pt-16 flex flex-col min-h-screen">
+  <%- include('../partials/navbar') %>
+    <main class="flex mt-4" style="max-width: calc(100% - 16rem); margin-right: 16rem;">
+      <%- include('../partials/sidebar') %>
+        <div class="flex-1 p-4">
+          <% if (body && body.trim() !=='' ) { %>
+            <div id="dynamic-content">
+              <%- include('../' + body) %>
+            </div>
+            <% } else { %>
+              <div></div>
+              <% } %>
+        </div>
+    </main>
+    <script src="/js/main.js"></script>
+    <script src="/js/dynamicContentLoader.js"></script>
+    <% if (typeof extraJS !=='undefined' && extraJS) { %>
+      <script src="<%= extraJS %>"></script>
+      <% } %>
+</body>
+
+</html>

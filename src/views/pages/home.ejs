@@ -1,0 +1,10 @@
+﻿<div id="dynamic-content" class="p-4">
+  <div class="text-center">
+    <h1 class="text-3xl font-bold mb-4">مرحبًا بك في تطبيقي</h1>
+    <p class="text-lg">هذا تطبيق احترافي باستخدام Node.js وEJS.</p>
+    <% if (user) { %>
+      <p class="mt-4">مرحبًا، <%= user.username %>!</p>
+      <% } %>
+  </div>
+</div>
+<script src="/js/dynamicContentLoader.js"></script>

@@ -1,0 +1,126 @@
+<div
+    class="h-screen fixed top-0 right-0 w-64 bg-gradient-to-b from-green-400 to-green-600 text-white shadow-lg flex flex-col">
+    <div class="p-4 flex items-center space-x-3 space-x-reverse border-b border-green-500">
+        <button id="sidebar-toggle" class="text-white focus:outline-none" aria-label="Toggle Sidebar">
+            <!-- Hamburger icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </button>
+        <span class="font-bold text-lg">الصفحة الرئيسية</span>
+    </div>
+    <nav class="flex-1 overflow-y-auto mt-4 px-2">
+        <ul class="space-y-2">
+            <li>
+                <a href="/" class="flex items-center p-2 rounded hover:bg-green-500 transition">
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
+                    </svg>
+                    الصفحة الرئيسية
+                </a>
+            </li>
+            <li>
+                <button id="system-management-btn"
+                    class="w-full flex items-center justify-between p-2 rounded hover:bg-green-500 transition focus:outline-none">
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        إدارة النظام
+                    </span>
+                    <svg id="system-management-arrow" class="w-4 h-4 transition-transform transform" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <ul id="system-management-menu" class="mt-1 space-y-1 px-4 hidden">
+                    <li>
+                        <button id="general-settings-btn"
+                            class="w-full flex items-center justify-between p-2 rounded hover:bg-green-600 transition focus:outline-none text-sm">
+                            الإعدادات العامة
+                            <svg id="general-settings-arrow" class="w-3 h-3 transition-transform transform" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <ul id="general-settings-menu" class="mt-1 space-y-1 px-4 hidden text-xs">
+                            <li><a href="/system/general-settings/tools"
+                                    class="block p-1 rounded hover:bg-green-600">أدوات النظام العامة</a></li>
+                            <li><a href="/system/general-settings/users"
+                                    class="block p-1 rounded hover:bg-green-600">إدارة المستخدمين</a></li>
+                            <li><a href="/system/general-settings/roles"
+                                    class="block p-1 rounded hover:bg-green-600">إدارة الأدوار والصلاحيات</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="advanced-settings-btn"
+                            class="w-full flex items-center justify-between p-2 rounded hover:bg-green-600 transition focus:outline-none text-sm">
+                            الإعدادات المتقدمة
+                            <svg id="advanced-settings-arrow" class="w-3 h-3 transition-transform transform" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </button>
+                        <ul id="advanced-settings-menu" class="mt-1 space-y-1 px-4 hidden text-xs">
+                            <li><a href="/system/advanced-settings/profile"
+                                    class="block p-1 rounded hover:bg-green-600">الحساب الشخصي</a></li>
+                            <li><a href="/system/advanced-settings/association-data"
+                                    class="block p-1 rounded hover:bg-green-600">بيانات الجمعية</a></li>
+                            <li><a href="/system/advanced-settings/notifications"
+                                    class="block p-1 rounded hover:bg-green-600">الإشعارات</a></li>
+                            <li><a href="/system/advanced-settings/branding"
+                                    class="block p-1 rounded hover:bg-green-600">الهوية البصرية</a></li>
+                            <li><a href="/system/advanced-settings/security"
+                                    class="block p-1 rounded hover:bg-green-600">الأمان</a></li>
+                            <li><a href="/system/advanced-settings/scheduling"
+                                    class="block p-1 rounded hover:bg-green-600">الجدولة</a></li>
+                            <li><a href="/system/advanced-settings/backup"
+                                    class="block p-1 rounded hover:bg-green-600">النسخ الاحتياطي</a></li>
+                            <li><a href="/system/advanced-settings/communication"
+                                    class="block p-1 rounded hover:bg-green-600">التواصل</a></li>
+                            <li><a href="/system/advanced-settings/units"
+                                    class="block p-1 rounded hover:bg-green-600">الوحدات</a></li>
+                            <li><a href="/system/advanced-settings/messages"
+                                    class="block p-1 rounded hover:bg-green-600">الرسائل</a></li>
+                            <li><a href="/system/advanced-settings/monitoring"
+                                    class="block p-1 rounded hover:bg-green-600">المراقبة</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.getElementById('system-management-btn').addEventListener('click', function () {
+        const menu = document.getElementById('system-management-menu');
+        const arrow = document.getElementById('system-management-arrow');
+        menu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    });
+
+    document.getElementById('general-settings-btn').addEventListener('click', function () {
+        const menu = document.getElementById('general-settings-menu');
+        const arrow = document.getElementById('general-settings-arrow');
+        menu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    });
+
+    document.getElementById('advanced-settings-btn').addEventListener('click', function () {
+        const menu = document.getElementById('advanced-settings-menu');
+        const arrow = document.getElementById('advanced-settings-arrow');
+        menu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    });
+</script>
+</create_file>

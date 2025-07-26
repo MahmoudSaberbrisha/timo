@@ -1,0 +1,27 @@
+﻿<%- include('../layouts/main', { title: 'المستخدمون', body: '' }) %>
+<div class="bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">إدارة المستخدمين</h2>
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="p-2 border">المعرف</th>
+        <th class="p-2 border">اسم المستخدم</th>
+        <th class="p-2 border">البريد الإلكتروني</th>
+        <th class="p-2 border">إجراءات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td class="p-2 border"><%= user.id %></td>
+          <td class="p-2 border"><%= user.username %></td>
+          <td class="p-2 border"><%= user.email %></td>
+          <td class="p-2 border">
+            <a href="/users/edit/<%= user.id %>" class="text-blue-600 hover:underline">تعديل</a>
+            <a href="/users/delete/<%= user.id %>" class="text-red-600 hover:underline ml-2">حذف</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
