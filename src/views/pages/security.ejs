@@ -1,2 +1,249 @@
-<h1 class="text-2xl font-bold mb-4">الأمان</h1>
-<p>هذه صفحة الأمان.</p>
+<div class="container mx-auto p-6">
+    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <div class="flex items-center mb-6">
+            <div class="bg-red-200 rounded-full p-3 mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-600" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m5-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold text-red-600">إعدادات الأمان</h1>
+                <p class="text-gray-600">إدارة إعدادات الأمان وحماية النظام</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Password Policy -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-2" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                سياسة كلمات المرور
+            </h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block mb-1 font-semibold">الحد الأدنى لطول كلمة المرور</label>
+                    <input type="number" value="8" min="4" max="32"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div>
+                    <label class="block mb-1 font-semibold">مدة انتهاء كلمة المرور (بالأيام)</label>
+                    <input type="number" value="90" min="30" max="365"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="require-uppercase" checked class="mr-2" />
+                        <label for="require-uppercase">يتطلب أحرف كبيرة</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="require-lowercase" checked class="mr-2" />
+                        <label for="require-lowercase">يتطلب أحرف صغيرة</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="require-numbers" checked class="mr-2" />
+                        <label for="require-numbers">يتطلب أرقام</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="require-symbols" class="mr-2" />
+                        <label for="require-symbols">يتطلب رموز خاصة</label>
+                    </div>
+                </div>
+                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">حفظ
+                    الإعدادات</button>
+            </form>
+        </div>
+
+        <!-- Login Security -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500 mr-2" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 7a2 2 0 012 2m0 0a2 2 0 01-2 2m2-2h6m-6 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2M7 7a2 2 0 012-2m0 0a2 2 0 012 2m-2-2H3m4 0V5" />
+                </svg>
+                أمان تسجيل الدخول
+            </h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block mb-1 font-semibold">الحد الأقصى لمحاولات الدخول الخاطئة</label>
+                    <input type="number" value="5" min="3" max="10"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div>
+                    <label class="block mb-1 font-semibold">مدة الحظر (بالدقائق)</label>
+                    <input type="number" value="30" min="5" max="120"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div>
+                    <label class="block mb-1 font-semibold">مدة انتهاء الجلسة (بالدقائق)</label>
+                    <input type="number" value="60" min="15" max="480"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="two-factor" class="mr-2" />
+                        <label for="two-factor">تفعيل المصادقة الثنائية</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="login-notifications" checked class="mr-2" />
+                        <label for="login-notifications">إشعارات تسجيل الدخول</label>
+                    </div>
+                </div>
+                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">حفظ
+                    الإعدادات</button>
+            </form>
+        </div>
+
+        <!-- IP Restrictions -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-2" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                </svg>
+                قيود عناوين IP
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block mb-1 font-semibold">إضافة عنوان IP مسموح</label>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="192.168.1.1"
+                            class="flex-1 border border-gray-300 rounded px-3 py-2" />
+                        <button type="button"
+                            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">إضافة</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">عناوين IP المسموحة:</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                            <span>192.168.1.100</span>
+                            <button class="text-red-500 hover:text-red-700">حذف</button>
+                        </div>
+                        <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
+                            <span>10.0.0.5</span>
+                            <button class="text-red-500 hover:text-red-700">حذف</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="enable-ip-restriction" class="mr-2" />
+                    <label for="enable-ip-restriction">تفعيل قيود عناوين IP</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Monitoring -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500 mr-2" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                مراقبة النشاط
+            </h2>
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="log-logins" checked class="mr-2" />
+                        <label for="log-logins">تسجيل عمليات الدخول</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="log-failed-attempts" checked class="mr-2" />
+                        <label for="log-failed-attempts">تسجيل المحاولات الفاشلة</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="log-admin-actions" checked class="mr-2" />
+                        <label for="log-admin-actions">تسجيل إجراءات المشرفين</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="log-data-changes" class="mr-2" />
+                        <label for="log-data-changes">تسجيل تغييرات البيانات</label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-1 font-semibold">مدة الاحتفاظ بالسجلات (بالأيام)</label>
+                    <input type="number" value="90" min="30" max="365"
+                        class="w-full border border-gray-300 rounded px-3 py-2" />
+                </div>
+                <div class="flex gap-2">
+                    <button type="button" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">حفظ
+                        الإعدادات</button>
+                    <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">عرض
+                        السجلات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Alerts -->
+    <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+        <h2 class="text-xl font-bold mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 mr-2" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            تنبيهات الأمان
+        </h2>
+        <div class="space-y-3">
+            <div class="bg-yellow-50 border-r-4 border-yellow-400 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="mr-3">
+                        <p class="text-sm text-yellow-700">
+                            <strong>تحذير:</strong> تم اكتشاف 3 محاولات دخول فاشلة من عنوان IP غير معروف في آخر ساعة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-red-50 border-r-4 border-red-400 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="mr-3">
+                        <p class="text-sm text-red-700">
+                            <strong>خطر:</strong> كلمات مرور بعض المستخدمين انتهت صلاحيتها ويجب تحديثها.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-green-50 border-r-4 border-green-400 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="mr-3">
+                        <p class="text-sm text-green-700">
+                            <strong>معلومة:</strong> تم تحديث إعدادات الأمان بنجاح.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
